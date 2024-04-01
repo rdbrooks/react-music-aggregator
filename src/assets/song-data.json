@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Lose Control",
+    "artist": "Teddy Swims",
+    "length": "3:30",
+    "genre": "Pop",
+    "date": "2023-06-23",
+    "image": "images/lose-control.jpg"
+  },
+  {
+    "name": "Beautiful Things",
+    "artist": "Benson Boone",
+    "length": "3:00",
+    "genre": "Folk Rock",
+    "date": "2024-01-18",
+    "image": "images/beautiful-things.jpg"
+  },
+  {
+    "name": "we can't be friends (wait for your love)",
+    "artist": "Ariana Grande",
+    "length": "3:48",
+    "genre": "Pop",
+    "date": "2024-03-28",
+    "image": "images/we-cant-be-friends.png"
+  },
+  {
+    "name": "Lovin on Me",
+    "artist": "Jack Harlow",
+    "length": "2:18",
+    "genre": "Rap",
+    "date": "2023-11-10",
+    "image": "images/lovin-on-me.jpg"
+  },
+  {
+    "name": "Cruel Summer",
+    "artist": "Taylor Swift",
+    "length": "2:58",
+    "genre": "Pop",
+    "date": "2019-08-23",
+    "image": "images/cruel-summer.jpg"
+  },
+  {
+    "name": "Stick Season",
+    "artist": "Noah Kahan",
+    "length": "3:02",
+    "genre": "Folk Rock",
+    "date": "2022-07-08",
+    "image": "images/stick-season.png"
+  },
+  {
+    "name": "Feather",
+    "artist": "Sabrina Carpenter",
+    "length": "3:05",
+    "genre": "Pop",
+    "date": "2023-03-17",
+    "image": "images/feather.jpg"
+  },
+  {
+    "name": "Houdini",
+    "artist": "Dua Lipa",
+    "length": "3:05",
+    "genre": "Pop",
+    "date": "2023-11-09",
+    "image": "images/houdini.png"
+  },
+  {
+    "name": "exes",
+    "artist": "Tate McRae",
+    "length": "2:39",
+    "genre": "Pop",
+    "date": "2023-11-17",
+    "image": "images/exes.jpg"
+  },
+  {
+    "name": "vampire",
+    "artist": "Olivia Rodrigo",
+    "length": "3:39",
+    "genre": "Pop",
+    "date": "2023-06-30",
+    "image": "images/vampire.jpg"
+  },
+  {
+    "name": "redrum",
+    "artist": "21 Savage",
+    "length": "4:30",
+    "genre": "Rap",
+    "date": "2024-01-12",
+    "image": "images/redrum.png"
+  }
+]
