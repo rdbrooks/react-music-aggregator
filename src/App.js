@@ -11,6 +11,9 @@ songData.forEach((song) => {
 function App() {
   const [liked, setLiked] = useState([]);
   const [numLiked, setNumLiked] = useState(0);
+  const [genreFilter, setGenreFilter] = useState("");
+  const [lengthFilter, setLengthFilter] = useState([]);
+  const [sortRelease, setSortRelease] = useState("");
 
   const likedInteraction = (name) => {
     if (liked.includes(name)) {
@@ -27,43 +30,156 @@ function App() {
     return listLiked;
   };
 
+  const resetFilters = () => {
+    setGenreFilter("");
+    setLengthFilter([]);
+    setSortRelease("");
+  };
+
   const buildSongList = () => {
-    const songList = songData.map((song) => (
-      <Song
-        name={song.name}
-        artist={song.artist}
-        length={song.length}
-        genre={song.genre}
-        date={song.date}
-        image={song.image}
-        likedInteraction={likedInteraction}
-      />
-    ));
+    let filteredSongs = [...songData];
+
+    if (sortRelease === "Oldest to Newest") {
+      filteredSongs = filteredSongs.sort(
+        (song1, song2) => new Date(song1.date) - new Date(song2.date)
+      );
+    }
+    if (sortRelease === "Newest to Oldest") {
+      filteredSongs = filteredSongs.sort(
+        (song1, song2) => new Date(song2.date) - new Date(song1.date)
+      );
+    }
+
+    if (genreFilter !== "") {
+      filteredSongs = filteredSongs.filter(
+        (song) => song.genre === genreFilter
+      );
+    }
+
+    if (lengthFilter.length !== 0) {
+      filteredSongs = filteredSongs.filter(
+        (song) =>
+          timeToSeconds(song.length) >= lengthFilter[0] &&
+          timeToSeconds(song.length) <= lengthFilter[1]
+      );
+    }
+
+    const songList =
+      filteredSongs.length > 0 ? (
+        filteredSongs.map((song) => (
+          <Song
+            name={song.name}
+            artist={song.artist}
+            length={song.length}
+            genre={song.genre}
+            date={song.date}
+            image={song.image}
+            likedInteraction={likedInteraction}
+            isLiked={liked.includes(song.name)}
+          />
+        ))
+      ) : (
+        <p>No songs match your search</p>
+      );
+
     return songList;
+  };
+
+  const timeToSeconds = (time) => {
+    const [minsString, secsString] = time.split(":");
+    const mins = parseInt(minsString);
+    const secs = parseInt(secsString);
+
+    return mins * 60 + secs;
   };
 
   return (
     <div className="App">
       <div id="music" className="web-section">
         <h1>Global Top Music</h1>
-        <div id="filter-genre" class="filter-sort">
-          <h2>Filter By Genre:</h2>
-          <button>Pop</button>
-          <button>Rap</button>
-          <button>Folk Rock</button>
-        </div>
         <div id="filter-length" class="filter-sort">
           <h2>Filter By Length:</h2>
-          <button>2:00 - 3:00</button>
-          <button>3:01 - 4:00</button>
-          <button>4:01+</button>
+          <button
+            onClick={() => setLengthFilter([])}
+            className={lengthFilter.length === 0 ? "active-filter" : ""}
+          >
+            All Lengths
+          </button>
+          <button
+            onClick={() => setLengthFilter([120, 180])}
+            className={lengthFilter[0] === 120 ? "active-filter" : ""}
+          >
+            2:00 - 3:00
+          </button>
+          <button
+            onClick={() => setLengthFilter([181, 240])}
+            className={lengthFilter[0] === 181 ? "active-filter" : ""}
+          >
+            3:01 - 4:00
+          </button>
+          <button
+            onClick={() => setLengthFilter([241, 1000])}
+            className={lengthFilter[0] === 241 ? "active-filter" : ""}
+          >
+            4:01+
+          </button>
+        </div>
+        <div id="filter-genre" class="filter-sort">
+          <h2>Filter By Genre:</h2>
+          <button
+            onClick={() => setGenreFilter("")}
+            className={genreFilter === "" ? "active-filter" : ""}
+          >
+            All Genres
+          </button>
+          <button
+            onClick={() => setGenreFilter("Pop")}
+            className={genreFilter === "Pop" ? "active-filter" : ""}
+          >
+            Pop
+          </button>
+          <button
+            onClick={() => setGenreFilter("Rap")}
+            className={genreFilter === "Rap" ? "active-filter" : ""}
+          >
+            Rap
+          </button>
+          <button
+            onClick={() => setGenreFilter("Folk Rock")}
+            className={genreFilter === "Folk Rock" ? "active-filter" : ""}
+          >
+            Folk Rock
+          </button>
         </div>
         <div id="sort-date" class="filter-sort">
           <h2>Sort By:</h2>
-          <button>Release Date</button>
+          <button
+            onClick={() => setSortRelease("")}
+            className={sortRelease === "" ? "active-filter" : ""}
+          >
+            No Sorting
+          </button>
+          <button
+            onClick={() => setSortRelease("Newest to Oldest")}
+            className={
+              sortRelease === "Newest to Oldest" ? "active-filter" : ""
+            }
+          >
+            Newest to Oldest
+          </button>
+          <button
+            onClick={() => setSortRelease("Oldest to Newest")}
+            className={
+              sortRelease === "Oldest to Newest" ? "active-filter" : ""
+            }
+          >
+            Oldest to Newest
+          </button>
         </div>
         <div id="reset" class="filter-sort">
-          <button>Reset All Filters and Sorting</button>
+          <button onClick={() => resetFilters()}>
+            Reset All Filters and Sorting
+          </button>
         </div>
         <h2 id="song-heading">Songs</h2>
         {buildSongList()}

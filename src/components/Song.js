@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { GoHeart, GoHeartFill } from "react-icons/go";
+
 export default function Song({
   name,
   artist,
@@ -6,7 +9,19 @@ export default function Song({
   date,
   image,
   likedInteraction,
+  isLiked,
 }) {
+  const [heartFilled, setHeartFilled] = useState(isLiked);
+
+  useEffect(() => {
+    setHeartFilled(isLiked);
+  }, [isLiked]);
+
+  const handleClick = () => {
+    setHeartFilled(!heartFilled);
+    likedInteraction(name);
+  };
+
   return (
     <div className="song">
       <img className="song-img" src={image} alt={name}></img>
@@ -17,10 +32,8 @@ export default function Song({
           {length} min | {genre} | {date}{" "}
         </p>
       </div>
-      <div className="like-button">
-        <button onClick={() => likedInteraction(name, artist, image)}>
-          Like
-        </button>
+      <div className="like-button" onClick={handleClick}>
+        {heartFilled ? <GoHeartFill /> : <GoHeart />}
       </div>
     </div>
   );

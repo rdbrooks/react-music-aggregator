@@ -3,8 +3,8 @@
 .App {
   display: flex;
   flex-direction: row;
-  padding-left: 30px;
-  padding-bottom: 30px;
+  padding-left: 5%;
+  padding-bottom: 5%;
   color: #4a5759;
 }
 
@@ -53,9 +53,9 @@ img {
 button {
   border: none;
   border-radius: 10px;
-  height: 3vw;
-  padding-left: 3%;
-  padding-right: 3%;
+  height: 70%;
+  padding-left: 2%;
+  padding-right: 2%;
   font-size: 1.5vw;
   margin: 10px;
   margin-right: 0px;
@@ -71,7 +71,7 @@ button:hover {
 
 #reset button {
   width: 100%;
-  padding: 0px;
+  padding: 5px;
   margin-left: 0px;
   background-color: #ffdede;
 }
@@ -115,4 +115,59 @@ button:hover {
 #song-heading {
   margin-top: 30px;
   margin-bottom: 0px;
+}
+
+.like-button {
+  font-size: 28px;
+  margin-left: auto;
+  padding: 8%;
+}
+
+.active-filter {
+  border-style: solid;
+  border-color: #4a5759;
+  border-width: 1.5px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Merriweather", serif;
+  font-weight: 600;
+}
+
+#filter-length h2,
+#filter-genre h2,
+#sort-date h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+button {
+  font-family: "Lato", sans-serif;
+  font-size: 22px;
+}
+
+.song h2,
+.song h3,
+.song p {
+  font-family: "Lato", sans-serif;
 }
