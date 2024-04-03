@@ -24,7 +24,7 @@ export default function Song({
 
   return (
     <div className="song">
-      <img className="song-img" src={image} alt={name}></img>
+      <img className="song-img" src={image} alt={"song cover of " + name}></img>
       <div className="song-info">
         <h2>{name}</h2>
         <h3>{artist}</h3>

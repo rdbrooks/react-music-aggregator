@@ -94,7 +94,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <main className="App">
       <div id="music" className="web-section">
         <h1>Global Top Music</h1>
         <div id="filter-length" class="filter-sort">
@@ -189,7 +189,7 @@ function App() {
         <p>Number of Liked Songs: {numLiked}</p>
         <div>{showLiked()}</div>
       </div>
-    </div>
+    </main>
   );
 }
 
