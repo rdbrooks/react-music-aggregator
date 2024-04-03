@@ -1,1 +1,1 @@
-# Development Assignment - React Music App
+# Development Assignment - React Music Aggregator
