@@ -20,7 +20,7 @@ function App() {
       setLiked(liked.filter((songName) => songName !== name));
       setNumLiked(numLiked - 1);
     } else {
-      setLiked((liked) => [...liked, name]);
+      setLiked((liked) => [name, ...liked]);
       setNumLiked(numLiked + 1);
     }
   };
