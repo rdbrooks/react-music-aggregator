@@ -1,7 +1,7 @@
 # Development Assignment - React Music Aggregator
 
-Here is the deployed website: https://react-music-app-sable.vercel.app/
+Deployed React App: https://react-music-app-sable.vercel.app/
 
-To run this project locally, clone the repository and use npm start
+To run this project locally, git clone this repository: https://github.com/rdbrooks/react-music-aggregator. Open the folder in a code editor (EX: VSCode) and run `npm install` in the project directory to install all the dependencies. Then, run `npm start` to start the application and open http://localhost:3000 to view it in your browser.
 
-The website uses flex boxes but is not responsive to a mobile view. There are otherwise no known bugs.
+There are no known bugs.

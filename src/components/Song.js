@@ -1,3 +1,4 @@
+import "./Song.css";
 import { useState, useEffect } from "react";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 

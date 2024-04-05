@@ -1,0 +1,38 @@
+/* Styling for song component */
+
+.song {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  height: 150px;
+  align-items: center;
+  margin-top: 15px;
+  background-color: #f1f1f1;
+}
+
+.song p {
+  font-family: "Lato", sans-serif;
+}
+
+.song h2 {
+  margin-bottom: 8px;
+  font-family: "Lato", sans-serif;
+}
+
+.song h3 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.like-button {
+  font-size: 28px;
+  margin-left: auto;
+  padding: 8%;
+}
