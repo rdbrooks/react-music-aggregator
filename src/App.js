@@ -96,7 +96,7 @@ function App() {
   return (
     <main className="App">
       <div id="music" className="web-section">
-        <h1>Global Top Music</h1>
+        <h1>Global Top Songs</h1>
         <div id="filter-length" class="filter-sort">
           <h2>Filter By Length:</h2>
           <button
